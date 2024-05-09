@@ -11,4 +11,5 @@ spec:
       dhcp:
         enable: true
         range:
-          end: 10.10.200.99
+          start: 10.10.200.100
+          end: 10.10.200.199
