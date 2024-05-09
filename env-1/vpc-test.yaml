@@ -10,3 +10,5 @@ spec:
       vlan: 1200
       dhcp:
         enable: true
+        range:
+          end: 10.10.200.99
