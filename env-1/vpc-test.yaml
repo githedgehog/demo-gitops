@@ -7,9 +7,3 @@ spec:
   subnets:
     default:
       subnet: 10.10.200.0/24
-      vlan: 1200
-      dhcp:
-        enable: true
-        range:
-          start: 10.10.200.100
-          end: 10.10.200.199
