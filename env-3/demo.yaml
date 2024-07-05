@@ -1,61 +1,61 @@
-apiVersion: vpc.githedgehog.com/v1alpha2
-kind: VPC
-metadata:
-  name: demo-vpc-1
-  namespace: default
-spec:
-  subnets:
-    default:
-      subnet: 10.30.101.0/24
-      vlan: 1101
-      dhcp:
-        enable: true
-        range:
-          start: 10.30.101.10
-          end: 10.30.101.99
----
-apiVersion: vpc.githedgehog.com/v1alpha2
-kind: VPC
-metadata:
-  name: demo-vpc-2
-  namespace: default
-spec:
-  subnets:
-    default:
-      subnet: 10.30.102.0/24
-      vlan: 1102
-      dhcp:
-        enable: true
-        range:
-          start: 10.30.102.10
-          end: 10.30.102.99
----
-apiVersion: vpc.githedgehog.com/v1alpha2
-kind: VPCAttachment
-metadata:
-  name: demo-vpc-1--server-1--mclag--s5248-05--as7326-01
-  namespace: default
-spec:
-  connection: server-1--mclag--s5248-05--as7326-01
-  subnet: demo-vpc-1/default
----
-apiVersion: vpc.githedgehog.com/v1alpha2
-kind: VPCAttachment
-metadata:
-  name: demo-vpc-2--server-4--bundled--sse-02
-  namespace: default
-spec:
-  connection: server-4--bundled--sse-02
-  subnet: demo-vpc-2/default
----
-apiVersion: vpc.githedgehog.com/v1alpha2
-kind: VPCPeering
-metadata:
-  name: demo-vpc-1--demo-vpc-2
-  namespace: default
-spec:
-  permit:
-    - demo-vpc-1:
-        subnets: [default]
-      demo-vpc-2:
-        subnets: [default]
+# apiVersion: vpc.githedgehog.com/v1alpha2
+# kind: VPC
+# metadata:
+#   name: demo-vpc-1
+#   namespace: default
+# spec:
+#   subnets:
+#     default:
+#       subnet: 10.30.101.0/24
+#       vlan: 1101
+#       dhcp:
+#         enable: true
+#         range:
+#           start: 10.30.101.10
+#           end: 10.30.101.99
+# ---
+# apiVersion: vpc.githedgehog.com/v1alpha2
+# kind: VPC
+# metadata:
+#   name: demo-vpc-2
+#   namespace: default
+# spec:
+#   subnets:
+#     default:
+#       subnet: 10.30.102.0/24
+#       vlan: 1102
+#       dhcp:
+#         enable: true
+#         range:
+#           start: 10.30.102.10
+#           end: 10.30.102.99
+# ---
+# apiVersion: vpc.githedgehog.com/v1alpha2
+# kind: VPCAttachment
+# metadata:
+#   name: demo-vpc-1--server-1--mclag--s5248-05--as7326-01
+#   namespace: default
+# spec:
+#   connection: server-1--mclag--s5248-05--as7326-01
+#   subnet: demo-vpc-1/default
+# ---
+# apiVersion: vpc.githedgehog.com/v1alpha2
+# kind: VPCAttachment
+# metadata:
+#   name: demo-vpc-2--server-4--bundled--sse-02
+#   namespace: default
+# spec:
+#   connection: server-4--bundled--sse-02
+#   subnet: demo-vpc-2/default
+# ---
+# apiVersion: vpc.githedgehog.com/v1alpha2
+# kind: VPCPeering
+# metadata:
+#   name: demo-vpc-1--demo-vpc-2
+#   namespace: default
+# spec:
+#   permit:
+#     - demo-vpc-1:
+#         subnets: [default]
+#       demo-vpc-2:
+#         subnets: [default]
