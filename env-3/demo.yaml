@@ -1,0 +1,31 @@
+apiVersion: vpc.githedgehog.com/v1alpha2
+kind: VPC
+metadata:
+  name: demo-vpc-1
+  namespace: default
+spec:
+  subnets:
+    default:
+      subnet: 10.30.101.0/24
+      vlan: 1101
+      dhcp:
+        enable: true
+        range:
+          start: 10.30.101.10
+          end: 10.30.101.99
+---
+apiVersion: vpc.githedgehog.com/v1alpha2
+kind: VPC
+metadata:
+  name: demo-vpc-2
+  namespace: default
+spec:
+  subnets:
+    default:
+      subnet: 10.30.102.0/24
+      vlan: 1102
+      dhcp:
+        enable: true
+        range:
+          start: 10.30.102.10
+          end: 10.30.102.99
