@@ -33,17 +33,17 @@ spec:
 apiVersion: vpc.githedgehog.com/v1alpha2
 kind: VPCAttachment
 metadata:
-  name: vpc-demo-1--server-1--mclag--s5248-05--as7326-01
+  name: demo-vpc-1--server-1--mclag--s5248-05--as7326-01
   namespace: default
 spec:
   connection: server-1--mclag--s5248-05--as7326-01
-  subnet: vpc-demo-1/default
+  subnet: demo-vpc-1/default
 ---
 apiVersion: vpc.githedgehog.com/v1alpha2
 kind: VPCAttachment
 metadata:
-  name: vpc-demo-2--server-4--bundled--sse-02
+  name: demo-vpc-2--server-4--bundled--sse-02
   namespace: default
 spec:
   connection: server-4--bundled--sse-02
-  subnet: vpc-demo-2/default
+  subnet: demo-vpc-2/default
