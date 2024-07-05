@@ -47,18 +47,18 @@ metadata:
 spec:
   connection: server-4--bundled--sse-02
   subnet: demo-vpc-2/default
----
-apiVersion: vpc.githedgehog.com/v1alpha2
-kind: VPCPeering
-metadata:
-  name: demo-vpc-1--demo-vpc-2
-  namespace: default
-spec:
-  permit:
-    - demo-vpc-1:
-        subnets: [default]
-      demo-vpc-2:
-        subnets: [default]
+# ---
+# apiVersion: vpc.githedgehog.com/v1alpha2
+# kind: VPCPeering
+# metadata:
+#   name: demo-vpc-1--demo-vpc-2
+#   namespace: default
+# spec:
+#   permit:
+#     - demo-vpc-1:
+#         subnets: [default]
+#       demo-vpc-2:
+#         subnets: [default]
 ---
 apiVersion: vpc.githedgehog.com/v1alpha2
 kind: ExternalPeering
