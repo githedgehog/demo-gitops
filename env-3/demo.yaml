@@ -36,38 +36,38 @@ spec:
   connection: server-3--unbundled--as7326-01
   subnet: demo-vpc-3/subnet-1
 
-# #
-# # VPC Peering: vpc-1 <> vpc-2
-# #
-# ---
-# apiVersion: vpc.githedgehog.com/v1alpha2
-# kind: VPCPeering
-# metadata:
-#   name: demo-vpc-1--demo-vpc-2
-#   namespace: default
-# spec:
-#   permit:
-#     - demo-vpc-1:
-#         subnets: [default]
-#       demo-vpc-2:
-#         subnets: [default]
+#
+# VPC Peering: vpc-1 <> vpc-2
+#
+---
+apiVersion: vpc.githedgehog.com/v1alpha2
+kind: VPCPeering
+metadata:
+  name: demo-vpc-1--demo-vpc-2
+  namespace: default
+spec:
+  permit:
+    - demo-vpc-1:
+        subnets: [default]
+      demo-vpc-2:
+        subnets: [default]
 
-# #
-# # External Peering: vpc-1 <> external
-# #
-# ---
-# apiVersion: vpc.githedgehog.com/v1alpha2
-# kind: ExternalPeering
-# metadata:
-#   name: demo-vpc-1--default--5835
-#   namespace: default
-# spec:
-#   permit:
-#     external:
-#       name: default--5835
-#       prefixes:
-#         - prefix: 0.0.0.0/0
-#     vpc:
-#       name: demo-vpc-1
-#       subnets:
-#         - default
+#
+# External Peering: vpc-1 <> external
+#
+---
+apiVersion: vpc.githedgehog.com/v1alpha2
+kind: ExternalPeering
+metadata:
+  name: demo-vpc-1--default--5835
+  namespace: default
+spec:
+  permit:
+    external:
+      name: default--5835
+      prefixes:
+        - prefix: 0.0.0.0/0
+    vpc:
+      name: demo-vpc-1
+      subnets:
+        - default
