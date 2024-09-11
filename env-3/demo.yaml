@@ -27,14 +27,14 @@ spec:
   permit:
     - [subnet-1, subnet-2]
 ---
-# apiVersion: vpc.githedgehog.com/v1alpha2
-# kind: VPCAttachment
-# metadata:
-#   name: demo-vpc-3--server-3--unbundled--as7326-01
-#   namespace: default
-# spec:
-#   connection: server-3--unbundled--as7326-01
-#   subnet: demo-vpc-3/subnet-1
+apiVersion: vpc.githedgehog.com/v1alpha2
+kind: VPCAttachment
+metadata:
+  name: demo-vpc-3--server-3--unbundled--as7326-01
+  namespace: default
+spec:
+  connection: server-3--unbundled--as7326-01
+  subnet: demo-vpc-3/subnet-1
 
 #
 # VPC Peering: vpc-1 <> vpc-2
