@@ -52,22 +52,22 @@ spec:
       demo-vpc-2:
         subnets: [default]
 
-# #
-# # External Peering: vpc-1 <> external
-# #
-# ---
-# apiVersion: vpc.githedgehog.com/v1alpha2
-# kind: ExternalPeering
-# metadata:
-#   name: demo-vpc-1--default--5835
-#   namespace: default
-# spec:
-#   permit:
-#     external:
-#       name: default--5835
-#       prefixes:
-#         - prefix: 0.0.0.0/0
-#     vpc:
-#       name: demo-vpc-1
-#       subnets:
-#         - default
+#
+# External Peering: vpc-1 <> external
+#
+---
+apiVersion: vpc.githedgehog.com/v1alpha2
+kind: ExternalPeering
+metadata:
+  name: demo-vpc-1--default--5835
+  namespace: default
+spec:
+  permit:
+    external:
+      name: default--5835
+      prefixes:
+        - prefix: 0.0.0.0/0
+    vpc:
+      name: demo-vpc-1
+      subnets:
+        - default
