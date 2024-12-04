@@ -1,4 +1,4 @@
-apiVersion: vpc.githedgehog.com/v1alpha2
+apiVersion: vpc.githedgehog.com/v1beta1
 kind: VPC
 metadata:
   name: demo-vpc-1
@@ -14,7 +14,7 @@ spec:
           start: 10.10.101.10
           end: 10.10.101.99
 ---
-apiVersion: vpc.githedgehog.com/v1alpha2
+apiVersion: vpc.githedgehog.com/v1beta1
 kind: VPC
 metadata:
   name: demo-vpc-2
@@ -30,7 +30,7 @@ spec:
           start: 10.10.102.10
           end: 10.10.102.99
 ---
-apiVersion: vpc.githedgehog.com/v1alpha2
+apiVersion: vpc.githedgehog.com/v1beta1
 kind: VPCAttachment
 metadata:
   name: demo-vpc-1--server-1--mclag--s5248-01--s5248-02
@@ -39,7 +39,7 @@ spec:
   connection: server-1--mclag--s5248-01--s5248-02
   subnet: demo-vpc-1/default
 ---
-apiVersion: vpc.githedgehog.com/v1alpha2
+apiVersion: vpc.githedgehog.com/v1beta1
 kind: VPCAttachment
 metadata:
   name: demo-vpc-2--server-4--unbundled--s5248-02

@@ -1,7 +1,7 @@
 # #
 # # VPC demo-vpc-3 and its attachment to server-3
 # #
-# apiVersion: vpc.githedgehog.com/v1alpha2
+# apiVersion: vpc.githedgehog.com/v1beta1
 # kind: VPC
 # metadata:
 #   name: demo-vpc-3
@@ -27,7 +27,7 @@
 #   permit:
 #     - [subnet-1, subnet-2]
 # ---
-# apiVersion: vpc.githedgehog.com/v1alpha2
+# apiVersion: vpc.githedgehog.com/v1beta1
 # kind: VPCAttachment
 # metadata:
 #   name: demo-vpc-3--server-3--bundled--s5248-01
@@ -40,7 +40,7 @@
 # # VPC Peering: vpc-1 <> vpc-2
 # #
 # ---
-# apiVersion: vpc.githedgehog.com/v1alpha2
+# apiVersion: vpc.githedgehog.com/v1beta1
 # kind: VPCPeering
 # metadata:
 #   name: demo-vpc-1--demo-vpc-2
@@ -56,7 +56,7 @@
 # # External Peering: vpc-1 <> external
 # #
 # ---
-# apiVersion: vpc.githedgehog.com/v1alpha2
+# apiVersion: vpc.githedgehog.com/v1beta1
 # kind: ExternalPeering
 # metadata:
 #   name: demo-vpc-1--default--5835
