@@ -37,7 +37,7 @@
 #   subnet: demo-vpc-3/subnet-1
 
 # #
-# # VPC Peering: vpc-1 <> vpc-2
+# # VPC Peering: frmo-vpc-1 <> demo-vpc-2
 # #
 # ---
 # apiVersion: vpc.githedgehog.com/v1beta1
