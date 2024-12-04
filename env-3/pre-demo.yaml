@@ -45,5 +45,5 @@ metadata:
   name: demo-vpc-2--server-4--bundled--sse-c4632-02
   namespace: default
 spec:
-  connection: server-4--server-4--bundled--sse-c4632-02
+  connection: server-4--bundled--sse-c4632-02
   subnet: demo-vpc-2/default
