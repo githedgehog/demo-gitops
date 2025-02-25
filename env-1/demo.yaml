@@ -59,12 +59,12 @@ spec:
 apiVersion: vpc.githedgehog.com/v1beta1
 kind: ExternalPeering
 metadata:
-  name: demo-vpc-1--default--5835
+  name: demo-vpc-1--default
   namespace: default
 spec:
   permit:
     external:
-      name: default--5835
+      name: default
       prefixes:
         - prefix: 0.0.0.0/0
     vpc:
