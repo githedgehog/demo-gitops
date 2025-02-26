@@ -20,8 +20,8 @@ spec:
     subnet-2:
       subnet: 10.10.132.0/24
       vlan: 1132
-      isolated: true
-      restricted: true
+      isolated: false
+      restricted: false
       dhcp:
         enable: true
   permit:
