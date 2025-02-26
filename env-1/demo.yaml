@@ -32,6 +32,8 @@ kind: VPCAttachment
 metadata:
   name: demo-vpc-3--server-3--bundled--s5248-01
   namespace: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   connection: server-3--bundled--s5248-01
   subnet: demo-vpc-3/subnet-1
@@ -45,6 +47,8 @@ kind: VPCPeering
 metadata:
   name: demo-vpc-1--demo-vpc-2
   namespace: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   permit:
     - demo-vpc-1:
@@ -61,6 +65,8 @@ kind: ExternalPeering
 metadata:
   name: demo-vpc-1--default
   namespace: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   permit:
     external:
