@@ -77,3 +77,20 @@ spec:
       name: demo-vpc-1
       subnets:
         - default
+#
+# VPC Peering: vpc-1 <> vpc-3
+#
+---
+apiVersion: vpc.githedgehog.com/v1beta1
+kind: VPCPeering
+metadata:
+  name: demo-vpc-1--demo-vpc-3
+  namespace: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  permit:
+    - demo-vpc-1:
+        subnets: [default]
+      demo-vpc-3:
+        subnets: [subnet-1]
