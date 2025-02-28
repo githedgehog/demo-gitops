@@ -1,43 +1,43 @@
-##
-## VPC demo-vpc-3 and its attachment to server-3
-##
-#apiVersion: vpc.githedgehog.com/v1beta1
-#kind: VPC
-#metadata:
-#  name: demo-vpc-3
-#  namespace: default
-#spec:
-#  subnets:
-#    subnet-1:
-#      subnet: 10.10.131.0/24
-#      gateway: 10.10.131.1
-#      vlan: 1131
-#      dhcp:
-#        enable: true
-#        range:
-#          start: 10.10.131.10
-#          end: 10.10.131.99
-#    subnet-2:
-#      subnet: 10.10.132.0/24
-#      vlan: 1132
-#      isolated: false
-#      restricted: false
-#      dhcp:
-#        enable: true
-#  permit:
-#    - [subnet-1, subnet-2]
-#---
-#apiVersion: vpc.githedgehog.com/v1beta1
-#kind: VPCAttachment
-#metadata:
-#  name: demo-vpc-3--server-3--bundled--s5248-01
-#  namespace: default
-#  annotations:
-#    argocd.argoproj.io/sync-wave: "1"
-#spec:
-#  connection: server-3--bundled--s5248-01
-#  subnet: demo-vpc-3/subnet-1
 #
+# VPC demo-vpc-3 and its attachment to server-3
+#
+apiVersion: vpc.githedgehog.com/v1beta1
+kind: VPC
+metadata:
+  name: demo-vpc-3
+  namespace: default
+spec:
+  subnets:
+    subnet-1:
+      subnet: 10.10.131.0/24
+      gateway: 10.10.131.1
+      vlan: 1131
+      dhcp:
+        enable: true
+        range:
+          start: 10.10.131.10
+          end: 10.10.131.99
+    subnet-2:
+      subnet: 10.10.132.0/24
+      vlan: 1132
+      isolated: false
+      restricted: false
+      dhcp:
+        enable: true
+  permit:
+    - [subnet-1, subnet-2]
+---
+apiVersion: vpc.githedgehog.com/v1beta1
+kind: VPCAttachment
+metadata:
+  name: demo-vpc-3--server-3--bundled--s5248-01
+  namespace: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  connection: server-3--bundled--s5248-01
+  subnet: demo-vpc-3/subnet-1
+
 ##
 ## VPC Peering: vpc-1 <> vpc-2
 ##
