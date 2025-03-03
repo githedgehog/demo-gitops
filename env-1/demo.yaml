@@ -41,7 +41,7 @@ spec:
 #
 ## VPC Peering: vpc-1 <> vpc-2
 ##
-#---
+---
 apiVersion: vpc.githedgehog.com/v1beta1
 kind: VPCPeering
 metadata:
